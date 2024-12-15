@@ -1,6 +1,4 @@
 <template>
-  <div>
-    <Navbar />
-    <RouterView />
-  </div>
+  <Navbar class="p-5" />
+  <NuxtPage />
 </template>

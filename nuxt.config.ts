@@ -1,3 +1,5 @@
+import Aura from '@primevue/themes/aura';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -7,25 +9,27 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    'nuxt-primevue'
+    '@primevue/nuxt-module',
+    '@nuxtjs/tailwindcss',
   ],
   css: [
-    'assets/scss/main.scss',
-    'primevue/resources/themes/bootstrap4-light-blue/theme.css'
+    'primeicons/primeicons.css'
+    // 'assets/scss/main.scss',
+    // 'primevue/resources/themes/bootstrap4-light-blue/theme.css'
   ],
   primevue: {
     usePrimeVue: true,
     options: {
-      ripple: true
+      ripple: true,
+      theme: {
+        preset: Aura,
+        options: {
+            darkModeSelector: 'system',
+            cssLayer: false
+        }
+      }
     },
     importPT: undefined,
-    cssLayerOrder: 'primevue',
-    components: {
-        prefix: 'P'
-    },
-    directives: {
-        prefix: 'p'
-    }
   },
-  devtools: { enabled: false }
+  devtools: { enabled: true }
 })
